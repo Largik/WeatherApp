@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zero_size">0dp</dimen>
+    <dimen name="choose_city_width">200dp</dimen>
+    <dimen name="choose_city_height">50dp</dimen>
+    <dimen name="current_day_card_width">320dp</dimen>
+    <dimen name="current_day_card_height">300dp</dimen>
+    <dimen name="current_day_card_margin_wind">50dp</dimen>
+    <dimen name="current_day_card_condition_img_height">95dp</dimen>
+    <dimen name="current_day_card_condition_img_width">110dp</dimen>
+    <dimen name="item_forecast_card_height">150dp</dimen>
+    <dimen name="item_forecast_card_width">106dp</dimen>
+    <dimen name="item_forecast_card_margin">8dp</dimen>
+    <dimen name="item_hour_card_margin">3dp</dimen>
+    <dimen name="item_hour_card_width">52dp</dimen>
+    <dimen name="item_hour_card_height">106dp</dimen>
+    <dimen name="item_hour_card_img_condition_size">30dp</dimen>
+    <dimen name="item_forecast_card_img_condition_size">60dp</dimen>
+    <dimen name="card_elevation">25dp</dimen>
+    <dimen name="card_corner_radius">20dp</dimen>
+    <dimen name="forecast_guide_line_percent_horizontal">0.6</dimen>
+    <dimen name="forecast_guide_line_end_horizontal">0.96</dimen>
+    <dimen name="detail_guide_line_percent_horizontal_top">0.1</dimen>
+    <dimen name="detail_guide_line_percent_horizontal_bottom">0.95</dimen>
+    <dimen name="detail_guide_line_vertical">16dp</dimen>
+    <dimen name="guide_line_vertical">45dp</dimen>
+    <dimen name="detail_card_margin">20dp</dimen>
+</resources>

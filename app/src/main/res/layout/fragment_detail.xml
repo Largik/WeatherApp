@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/detail_card_margin"
+    app:cardBackgroundColor="@color/teal_200"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="@dimen/card_elevation"
+    app:layout_constraintBottom_toTopOf="@id/guideline_center_horizontal"
+    app:layout_constraintEnd_toStartOf="@id/guideline_end_vertical"
+    app:layout_constraintStart_toEndOf="@id/guideline_start_vertical"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_close"
+            android:contentDescription="@string/close_detail"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/guideline_top_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date"
+            style="@style/DetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline_top_horizontal"
+            tools:text="Monday" />
+
+        <ImageView
+            android:id="@+id/condition_img"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/avg_temp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date"
+            tools:background="@drawable/ic_launcher_background"
+            tools:src="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/avg_temp"
+            style="@style/DetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/min_temp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/condition_img"
+            tools:text="40°C" />
+
+        <TextView
+            android:id="@+id/min_temp"
+            style="@style/TodayCardMinTempStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/condition"
+            app:layout_constraintEnd_toStartOf="@id/max_temp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/avg_temp"
+            tools:text="20°C" />
+
+        <TextView
+            android:id="@+id/max_temp"
+            style="@style/TodayCardMaxTempStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/condition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/min_temp"
+            app:layout_constraintTop_toBottomOf="@id/avg_temp"
+            tools:text="50°C" />
+
+        <TextView
+            android:id="@+id/condition"
+            style="@style/DefaultWhiteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/humidity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/min_temp"
+            tools:text="Clouds &amp; sun" />
+
+        <TextView
+            android:id="@+id/humidity"
+            style="@style/WhiteTextBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/wind_kph"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/condition"
+            tools:text="Humidity" />
+
+        <TextView
+            android:id="@+id/wind_kph"
+            style="@style/WhiteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/hours_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/humidity"
+            tools:text="500 kph" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hours_list"
+            android:layout_width="@dimen/zero_size"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_bottom_horizontal"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end_vertical"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/guideline_start_vertical"
+            app:layout_constraintTop_toBottomOf="@id/wind_kph"
+            tools:listitem="@layout/item_hour" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top_horizontal"
+            android:layout_width="@dimen/zero_size"
+            android:layout_height="@dimen/zero_size"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="@dimen/detail_guide_line_percent_horizontal_top" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom_horizontal"
+            android:layout_width="@dimen/zero_size"
+            android:layout_height="@dimen/zero_size"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="@dimen/detail_guide_line_percent_horizontal_bottom" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start_vertical"
+            android:layout_width="@dimen/zero_size"
+            android:layout_height="@dimen/zero_size"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/detail_guide_line_vertical" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end_vertical"
+            android:layout_width="@dimen/zero_size"
+            android:layout_height="@dimen/zero_size"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/detail_guide_line_vertical" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

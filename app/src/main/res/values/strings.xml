@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Weather Forecast</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="today">Today</string>
+    <string name="next_days">Forecast for today and next 3 days:</string>
+    <string name="close_detail">Close</string>
+    <string name="search">Select city</string>
+    <string name="icon_condition">Icon condition</string>
+</resources>

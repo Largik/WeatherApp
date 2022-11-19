@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/forecast">
+
+    <fragment
+        android:id="@+id/forecast"
+        android:name="com.lagrik.weatherapp.presentation.fragment.ForecastFragment"
+        android:label="ForecastFragment"
+        tools:layout="@layout/fragment_forecast">
+        <action
+            android:id="@+id/action_forecastFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.lagrik.weatherapp.presentation.fragment.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail"></fragment>
+</navigation>

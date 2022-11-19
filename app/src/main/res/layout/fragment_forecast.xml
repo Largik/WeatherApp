@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/ThemeOverlay.WeatherApp.FullscreenContainer"
+    tools:context=".presentation.fragment.ForecastFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/select_city"
+        android:layout_width="@dimen/choose_city_width"
+        android:layout_height="@dimen/choose_city_height"
+        android:gravity="center"
+        android:queryHint="@string/search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end_vertical"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showAsAction="always|collapseActionView" />
+
+    <TextView
+        android:id="@+id/submit_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/card_today"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end_vertical"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_vertical"
+        tools:text="Ulyanovsk, Russia" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_today"
+        android:layout_width="@dimen/current_day_card_width"
+        android:layout_height="@dimen/current_day_card_height"
+        app:cardBackgroundColor="@color/light_blue"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation"
+        app:layout_constraintBottom_toTopOf="@id/guideline_center_horizontal"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end_vertical"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/today_text"
+                style="@style/DefaultWhiteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/today"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/avg_temp"
+                style="@style/TodayCardAvgTempStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@id/min_temp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/today_text"
+                tools:text="40°C" />
+
+            <TextView
+                android:id="@+id/min_temp"
+                style="@style/TodayCardMinTempStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@id/condition"
+                app:layout_constraintEnd_toStartOf="@id/max_temp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/avg_temp"
+                tools:text="20°C" />
+
+            <TextView
+                android:id="@+id/max_temp"
+                style="@style/TodayCardMaxTempStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@id/condition"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/min_temp"
+                app:layout_constraintTop_toBottomOf="@id/avg_temp"
+                tools:text="50°C" />
+
+            <TextView
+                android:id="@+id/condition"
+                style="@style/DefaultWhiteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@id/humidity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/min_temp"
+                tools:text="Clouds &amp; sun" />
+
+            <TextView
+                android:id="@+id/humidity"
+                style="@style/WhiteTextBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@id/wind_kph"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/condition"
+                tools:text="Humidity" />
+
+            <TextView
+                android:id="@+id/wind_kph"
+                style="@style/WhiteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/current_day_card_margin_wind"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/humidity"
+                tools:text="500 kph" />
+
+            <TextView
+                android:id="@+id/last_update"
+                style="@style/UpdateWhiteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="last update 11-20-2000 21:00" />
+
+            <ImageView
+                android:id="@+id/condition_img"
+                android:layout_width="@dimen/current_day_card_condition_img_width"
+                android:layout_height="@dimen/current_day_card_condition_img_height"
+                android:contentDescription="@string/icon_condition"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/condition"
+                app:layout_constraintTop_toBottomOf="@id/condition"
+                app:layout_constraintVertical_bias="0.0"
+                tools:background="@drawable/ic_launcher_background"
+                tools:src="@drawable/ic_launcher_foreground" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        style="@style/TextBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/next_days"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_vertical"
+        app:layout_constraintTop_toBottomOf="@id/guideline_center_horizontal" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/forecast_recycler_list"
+        android:layout_width="@dimen/zero_size"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end_vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/guideline_start_vertical"
+        app:layout_constraintTop_toBottomOf="@id/guideline_center_horizontal"
+        tools:listitem="@layout/item_forecast" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_center_horizontal"
+        android:layout_width="@dimen/zero_size"
+        android:layout_height="@dimen/zero_size"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/forecast_guide_line_percent_horizontal" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start_vertical"
+        android:layout_width="@dimen/zero_size"
+        android:layout_height="@dimen/zero_size"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/guide_line_vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end_vertical"
+        android:layout_width="@dimen/zero_size"
+        android:layout_height="@dimen/zero_size"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/guide_line_vertical" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
