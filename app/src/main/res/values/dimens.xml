@@ -6,6 +6,7 @@
     <dimen name="current_day_card_width">320dp</dimen>
     <dimen name="current_day_card_height">300dp</dimen>
     <dimen name="current_day_card_margin_wind">50dp</dimen>
+    <dimen name="current_day_last_update_margin">7dp</dimen>
     <dimen name="current_day_card_condition_img_height">95dp</dimen>
     <dimen name="current_day_card_condition_img_width">110dp</dimen>
     <dimen name="item_forecast_card_height">150dp</dimen>
