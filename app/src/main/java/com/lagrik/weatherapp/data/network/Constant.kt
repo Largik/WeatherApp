@@ -6,7 +6,7 @@ object Constant {
     const val COUNT_DAYS = 4
     const val CELSIUS = "°C"
     const val HUMIDITY = "Humidity: "
-    const val WIND = "kph"
+    const val WIND = " kph"
     const val HTTP = "https:"
     const val LAST_UPDATE = "last update: "
     const val TODAY = "Today in "
