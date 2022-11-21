@@ -9,7 +9,7 @@
 - Async: Coroutines + LiveData;
 - Navigation: Navigation Component
 - DI: Hilt;
-- Network: Retrofit.
+- Network: Retrofit + Moshi.
 
 ### Описание:
 
