@@ -7,6 +7,7 @@
 - Language: Kotlin;
 - Architecture: Single Activity + Clean Architecture + MVVM;
 - Async: Coroutines + LiveData;
+- Navigation: Navigation Component
 - DI: Hilt;
 - Network: Retrofit.
 
